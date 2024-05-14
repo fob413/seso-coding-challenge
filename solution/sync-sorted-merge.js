@@ -14,7 +14,7 @@ module.exports = (logSources, printer) => {
     if (log) priorityQueue.enqueue({ log, sourceIndex });
   });
 
-  // merge and print logs in chronological order til all the logSources are drained
+  // merge and print logs in chronological order till all the logSources are drained
   while (!priorityQueue.isEmpty()) {
     const { log, sourceIndex } = priorityQueue.dequeue();
     printer.print(log);
